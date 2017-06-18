@@ -1,16 +1,10 @@
 def is_prime(num):
-	if num == 2:
-		return True
-	elif num == 1:
-		return False
-	elif num == 3:
-		return True
-	elif num % 2 == 0:
-		return False
-	else:
-		for i in range(4, num):
-			if num % i == 0:
-				return False
+	point = 1
+	for i in range(2, num+1):
+		if num % i == 0:
+			point += 1
+		if point > 2:
+			return False
 	return True
 
 def count_prime(n):
@@ -25,6 +19,5 @@ def count_prime(n):
 				break
 			counted += 1
 		start_num += 1
-
 
 print count_prime(10001)
